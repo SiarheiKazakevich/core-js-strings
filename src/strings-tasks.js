@@ -19,8 +19,15 @@
  *   getStringLength(null) => 0
  *   getStringLength(undefined) => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  if (value === '' || value === null || value === undefined) {
+    return 0;
+  }
+  if (typeof value === 'string') {
+    return value.length;
+  }
+
+  return 'Please provide valid finite numbers for the values.';
 }
 
 /**
