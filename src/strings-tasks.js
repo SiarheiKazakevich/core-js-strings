@@ -202,7 +202,7 @@ function removeLastOccurrences(str, value) {
 function sumOfCodes(str) {
   if (typeof str === 'string' && str !== null) {
     let soma = 0;
-    str.split('').forEach(function (item) {
+    str.split('').forEach(function processCharacter(item) {
       soma += item.charCodeAt(0);
     });
     return soma;
