@@ -273,8 +273,11 @@ function formatTime(/* minutes, seconds */) {
  *   reverseString('abcdef') => 'fedcba'
  *   reverseString('12345') => '54321'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  if (typeof str === 'string' && str !== null) {
+    return str.split('').reverse().join('');
+  }
+  return 0;
 }
 
 /**
@@ -288,8 +291,11 @@ function reverseString(/* str */) {
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  if (typeof str === 'string' && str !== null) {
+    return str.split('').sort().join('');
+  }
+  return 0;
 }
 
 /**
