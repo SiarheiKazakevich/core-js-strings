@@ -310,8 +310,11 @@ function orderAlphabetically(str) {
  *   containsSubstring('JavaScript is Fun', 'Python') => false
  *   containsSubstring('12345', '34') => true
  */
-function containsSubstring(/* str, substring */) {
-  throw new Error('Not implemented');
+function containsSubstring(str, substring) {
+  if (typeof str === 'string' && str !== null) {
+    return str.includes(substring);
+  }
+  return 0;
 }
 
 /**
