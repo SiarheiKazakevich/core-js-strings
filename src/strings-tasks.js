@@ -400,10 +400,17 @@ function findLongestWord(sentence) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  if (typeof str === 'string' && str !== null) {
+    return str
+      .split(' ')
+      .map(function getWord(word) {
+        return word.split('').reverse().join('');
+      })
+      .join(' ');
+  }
+  return '';
 }
-
 /**
  * Inverts the case of each character in the given string.
  *
