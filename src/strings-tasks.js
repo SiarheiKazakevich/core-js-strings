@@ -479,7 +479,7 @@ function getStringFromTemplate(firstName, lastName) {
 function extractNameFromTemplate(value) {
   if (typeof value === 'string' && value !== null) {
     const keywords = ['Hello,', '!'];
-    const nameParts = value.split(' ').filter(function (word) {
+    const nameParts = value.split(' ').filter(function getWord(word) {
       return !keywords.includes(word);
     });
 
@@ -499,8 +499,14 @@ function extractNameFromTemplate(value) {
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  if (typeof str === 'string' && str !== null) {
+    const charArray = str.split('');
+    charArray.shift();
+    charArray.pop();
+    return charArray.join('');
+  }
+  return '';
 }
 
 /**
