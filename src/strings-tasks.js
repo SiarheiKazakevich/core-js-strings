@@ -454,8 +454,16 @@ function invertCase(str) {
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  if (
+    typeof firstName === 'string' &&
+    firstName !== null &&
+    typeof lastName === 'string' &&
+    lastName !== null
+  ) {
+    return `Hello, ${firstName} ${lastName}!`;
+  }
+  return '';
 }
 
 /**
