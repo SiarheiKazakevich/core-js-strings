@@ -546,8 +546,14 @@ function extractEmails(str) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  // throw new Error('Not implemented');
+  return str.replace(/[a-z]/gi, (letter) => {
+    const base = letter <= 'Z' ? 65 : 97; // Базовый код для A-Z или a-z
+    return String.fromCharCode(
+      ((letter.charCodeAt(0) - base + 13) % 26) + base
+    );
+  });
 }
 
 /**
